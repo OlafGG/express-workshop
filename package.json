@@ -4,7 +4,12 @@
   "description": "An API REST using express.js",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlafGG/express-workshop.git"
   },
   "keywords": [
     "api",
@@ -14,7 +19,12 @@
   ],
   "author": "Uriel Olaf BB",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlafGG/express-workshop/issues"
+  },
+  "homepage": "https://github.com/OlafGG/express-workshop#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
   }
 }
