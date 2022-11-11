@@ -1,6 +1,7 @@
 const express = require('express');
 const pokemon = express.Router();
-const db = require('../config/database');
+const db = require('../config/pokemon.database');
+
 
 pokemon.post("/", async (req, res, next)=>{
     const { pok_name, pok_height, pok_weight, pok_base_experience } = req.body;
@@ -97,4 +98,4 @@ pokemon.get('/:name([A-Za-z]+)', async(req, res, next) => {
 });
 
 
-module.exports = pokemon;//comun, pero solo una cosa
+module.exports = pokemon;
