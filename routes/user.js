@@ -21,10 +21,7 @@ user.post("/signin", async (req, res, next)=>{
     return res.status(500).json({code: 500, message: "Campos inconpletos"})
 });
 
-user.get("/", async (req, res, next)=>{
-    const query = await db.query("SELECT * FROM user");
-    return res.status(200).json({code: 200, message: query});
-});
+
 
 user.post("/login", async (req, res, next)=>{
     const { user_mail, user_password } = req.body;
@@ -39,7 +36,7 @@ user.post("/login", async (req, res, next)=>{
             }, "debugkey");
             return res.status(200).json({code: 200, message: token});
         }else{
-            return res.status(401).json({code: 401, message: "wrong password"});
+            return res.status(200).json({code: 200, message: "Usuario y/o contraseña incorrectos"});
         }
     }
     return res.status(500).json({code: 500, message: "Datos incompletos"});
@@ -47,6 +44,10 @@ user.post("/login", async (req, res, next)=>{
     
 });
 
+user.get("/", async (req, res, next)=>{
+    const query = await db.query("SELECT * FROM user");
+    return res.status(200).json({code: 200, message: query});
+});
 
 
 module.exports = user;
